@@ -1,12 +1,15 @@
-def check_palindrome(i,n,check_string):
-    if i>=n/2:
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+print("Try programiz.pro")
+def palindrome(i,n,input):
+    if i >= n/2:
         return True
-    if check_string[i] != check_string[n-i-1]:
+    if input[i] != input[n-i-1]:
         return False
-    
-    return check_palindrome(i+1, len(check_string), check_string=check_string)
+    return palindrome(i+1, n, input)
 
 
-check_string = input("Enter string to check palindrome")
-print('aa', check_string)
-check_palindrome(0,len(check_string), check_string)
+input_string = input("Enter string to check: ")
+result = palindrome(0, len(input_string), input_string)
+
+print('result', result)
